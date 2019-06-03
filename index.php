@@ -19,13 +19,27 @@
 </head>
 <body>
 <h2>Từ Điển Anh - Việt</h2>
-<form method="post">
+<form method="get">
     <input type="text" name="search" placeholder="Nhập từ cần tìm"/>
     <input type = "submit" id = "submit" value = "Tìm"/>
     <?php
     $dictionary = array("hello"=>"xin chào", "how"=>"thế nào", "book"=>"quyển vở", "computer"=>"máy tính");
-    if($_SERVER["REQUEST_METHOD"] =="POST"){
-        $search = $_POST["search"];
+//    if($_SERVER["REQUEST_METHOD"] =="POST"){
+//        $search = $_POST["search"];
+//        $flag = 0;
+//        foreach ($dictionary as $work => $decreption){
+//            if($work == $search){
+//                echo "Tu ".$work." co nghia la: ".$decreption;
+//                echo "<br/>";
+//                $flag = 1;
+//            }
+//        }
+//        if ($flag == 0){
+//            echo "Khong tim thay tu can tra";
+//        }
+//    }
+    if($_SERVER["REQUEST_METHOD"] =="GET"){
+        $search = $_GET["search"];
         $flag = 0;
         foreach ($dictionary as $work => $decreption){
             if($work == $search){
